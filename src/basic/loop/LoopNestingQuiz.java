@@ -26,9 +26,8 @@ public class LoopNestingQuiz {
             // 반복문 내부에 선언을 해서, i++이 될 때마다 0으로 초기화 되어야 함.
             int cnt = 0;
             for (int j=1; j<=i; j++) {
-                if (i % j == 0) {
-                    cnt++;
-                }
+                if (i % j == 0) cnt++;
+
             }
             if (cnt == 2) {
                 System.out.print(i + " ");
