@@ -94,6 +94,12 @@ public class ArrayListExample {
 
         // 리스트 생성과 동시에 객체 초기화하기
         List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        // Arrays.asList()를 통해서 리턴받은 리스트는 삽입/삭제가 불가능합니다. (고정된 크기를 가짐)
+//        list.add(100);
+//        list.remove(6);
+        list.set(0, 100);
+        System.out.println(list);
+
 
         // 한번에 객체 많이 추가하기
         Collections.addAll(score, 78, 100, 88, 79, 100, 21, 56, 100);
@@ -111,8 +117,22 @@ public class ArrayListExample {
         System.out.println(score);
 
         // 내림차 정렬
+//        Collections.reverse(score); // 단순 역순 배치 (정렬 x)
         Collections.sort(score, Collections.reverseOrder());
         System.out.println(score);
+
+        // 두 요소의 위치를 교체: swap(리스트, i, j);
+        Collections.swap(score, 3, 7);
+        System.out.println(score);
+
+        // 리스트 내의 요소를 무작위로 섞기
+        Collections.shuffle(score);
+        System.out.println(score);
+
+        // 원하는 객체로 컬렉션을 전부 초기화
+        Collections.fill(score, 100);
+        System.out.println(score);
+
     }
 
 }
