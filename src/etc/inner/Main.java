@@ -36,6 +36,28 @@ public class Main {
         int r3 = cal.operate(10, 4);
         System.out.println(r3);
 
+        int r4 = new Calculator() {
+            @Override
+            public int operate(int n1, int n2) {
+                return n1 % n2;
+            }
+        }.operate(23, 4);
+
+        // 람다 (1.8 이상부터 사용 가능)
+        // 사용 전제조건
+        // -> 반드시 인터페이스 안의 추상메서드가 1개여야 한다.
+
+        /*
+        Calculator 인터페이스는 추상메서드가 1개.
+        굳이 이름을 언급하지 않겠다는 거.
+        오버라이딩 하는 함수 블록에 포함된 코드가 1줄이고,
+        그 1줄이 return문이라면 괄호와 return 생략이 가능.
+         */
+        cal = (n1, n2) -> n1 / n2;
+
+        int r5 = cal.operate(20, 5);
+        System.out.println("r5 = " + r5);
+
 
     }
 
